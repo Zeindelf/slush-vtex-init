@@ -5,11 +5,6 @@ Taskerify.config.sourcemaps = false;
 Taskerify.config.srcPath    = './src/assets';  // Src Path
 Taskerify.config.distPath   = './dist/assets'; // Dist Path
 
-Taskerify.config.images.minCompress       = 60;      // {int} Default value
-Taskerify.config.images.maxCompress       = 70;      // {int} Default value
-Taskerify.config.images.optimizationLevel = 5;       // {int} Default value
-Taskerify.config.images.quality           = '70-80'; // {string} Default value
-
 const NODE_MODULES = './node_modules';
 const SRC          = Taskerify.config.srcPath;
 const DIST         = Taskerify.config.distPath;
