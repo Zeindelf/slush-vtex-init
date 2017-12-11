@@ -37,6 +37,14 @@
     "underscore.string": "^2.3.3"
   },
   "keywords": [
-    "slushgenerator"
+    "slush",
+    "slushgenerator",
+    "boilerplate",
+    "scaffold",
+    "workspace",
+    "vtex",
+    "vtex-boilerplate",
+    "vtex-scaffold",
+    "vtex-workspace"
   ]
 }
