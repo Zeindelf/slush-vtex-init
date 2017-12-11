@@ -1,6 +1,6 @@
 # Slush Vtex-init [![Build Status](https://secure.travis-ci.org/zeindelf/slush-vtex-init.png?branch=master)](https://travis-ci.org/zeindelf/slush-vtex-init) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-vtex-init.png)](http://badges.enytc.com/for/npm/slush-vtex-init)
 
-> A slush generator to scaffold a Shopify [3~Development Vtex Store Development
+> A slush generator to scaffold a Vtex Store Development
 
 
 ## Getting Started
@@ -40,7 +40,7 @@ See the [CONTRIBUTING Guidelines](https://github.com/zeindelf/slush-vtex-init/bl
 ## Support
 If you have any problem or suggestion please open an issue [here](https://github.com/zeindelf/slush-vtex-init/issues).
 
-## License 
+## License
 
 The MIT License
 

@@ -1,0 +1,28 @@
+{
+  "name": "scss-animate",
+  "version": "0.0.2",
+  "description": "A SASS port of Dan Eden's Animate.css",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zeindelf/scss-animate"
+  },
+  "author": {
+    "name": "Wellington Barreto",
+    "email": "zeindelf@hotmail.com",
+    "homepage": "http://zeindelf.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zeindelf/scss-animate/issues"
+  },
+  "homepage": "https://github.com/Zeindelf/scss-animate#readme",
+  "keywords": [
+    "animate.scss",
+    "animate.css",
+    "animate"
+  ]
+}

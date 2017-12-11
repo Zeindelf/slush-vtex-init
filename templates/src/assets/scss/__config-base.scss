@@ -1,0 +1,30 @@
+
+/**
+ * Settings
+ */
+@import './settings/_colors.scss';
+@import './settings/_typography.scss';
+@import './settings/_alert-messages.scss';
+@import './settings/_variables.scss';
+
+/**
+ * Tools
+ */
+@import './tools/_functions.scss';
+@import './tools/_mixins.scss';
+
+/**
+ * Vendor | Mixins
+ */
+@import './vendor/sass-rem/_rem.scss';
+@import './vendor/form-reset/_form-reset.scss';
+@import './vendor/scss-animate/_animate.scss';
+
+/**
+ * Components
+ */
+@import './components/_buttons.scss';
+@import './components/_forms.scss';
+@import './components/_titles.scss';
+@import './components/_texts.scss';
+@import './components/_table.scss';

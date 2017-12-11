@@ -1,0 +1,47 @@
+
+.x-page {
+    &__main-container {
+        @include container;
+    }
+
+    &__container {
+        @include mq('sm') {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__main-content-left,
+    &__main-content-right {
+        @include rem(padding-top, 24px);
+        @include rem(padding-bottom, 24px);
+    }
+
+    &__main-content-left {
+        @include mq('sm') {
+            width: 22.5%;
+        }
+
+        @include mq('sm', max) {
+            padding-bottom: 0;
+        }
+    }
+
+    &__main-content-right {
+        @include mq('sm') {
+            background-color: $color-white;
+            @include rem(padding-left, 32px);
+            @include rem(padding-right, 32px);
+            width: 77.5%;
+        }
+    }
+
+    &__main-title {
+        @extend %title--primary;
+    }
+
+    &__main-content {
+        @include rem(font-size, 12px);
+        @extend %page-common__content;
+    }
+}

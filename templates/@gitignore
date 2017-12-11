@@ -1,0 +1,5 @@
+dist/
+node_modules/
+src/assets/img-min/
+src/assets/scss/settings/_fonts.scss
+*.log

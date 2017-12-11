@@ -1,0 +1,76 @@
+
+body {
+    @include flex-centered;
+    min-height: 100vh;
+    width: 100%;
+
+    &.has--loader {
+        .x-ajax-loader__container {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+#vtexIdUI-global-loader {
+    z-index: 9999 !important;
+}
+
+#vtexIdContainer {
+    position: fixed !important;
+    z-index: 9999 !important;
+}
+
+#ajaxBusy{
+    position: fixed;
+    @include rem(bottom, 10px);
+    @include rem(left, 10px);
+    z-index: 9999;
+
+    p {
+        background-image: url('custom-ajax-loader.gif');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        @include rem(width, 50px);
+        @include rem(height, 50px);
+    }
+}
+
+/**
+ * Hide Images Alt Text
+ * Hide Titles/Texts
+ */
+img:not([src]),
+.has--lazy {
+    color: transparent;
+    opacity: 0;
+
+    + .has--lazy-title {
+        @include hide-text;
+    }
+}
+
+/**
+ * Fixes Firefox anomaly during image load
+ */
+@-moz-document url-prefix() {
+    img:-moz-loading {
+        color: transparent;
+        opacity: 0;
+    }
+}
+
+/**
+ * Slick prevent rendering
+ * List of class has slick
+ */
+.slick-class {
+    opacity: 0;
+    visibility: hidden;
+
+    &.slick-initialized {
+        opacity: 1;
+        visibility: visible;
+    }
+}

@@ -1,0 +1,15 @@
+
+<script>
+    // Global Helper Object
+    var <%= storePascalCaseName %> = <%= storePascalCaseName %> || {};
+    <%= storePascalCaseName %>.pathname = window.location.pathname;
+    <%= storePascalCaseName %>.mobileScreen = 420;
+    <%= storePascalCaseName %>.tabletScreen = 768;
+    <%= storePascalCaseName %>.mobileDevice = screen.width < <%= storePascalCaseName %>.mobileScreen || window.innerWidth < <%= storePascalCaseName %>.mobileScreen;
+    <%= storePascalCaseName %>.tabletDevice = screen.width < <%= storePascalCaseName %>.tabletScreen || window.innerWidth < <%= storePascalCaseName %>.tabletScreen;
+
+    // Optimized by DOMContentLoaded instead DOMLoad
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('body').classList.remove('has--loader');
+    });
+</script>

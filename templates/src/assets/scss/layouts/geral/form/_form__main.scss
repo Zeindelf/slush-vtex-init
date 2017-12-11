@@ -1,0 +1,119 @@
+
+.x-form {
+    &__group {
+        @extend %form__group;
+        position: relative;
+
+        label {
+            @extend %form__label;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"],
+        input[type="tel"],
+        input[type="file"],
+        select {
+            @extend %form__input;
+        }
+
+        input[type="checkbox"] {
+            @extend %form__checkbox;
+        }
+
+        input[type="radio"] {
+            @extend %form__radio;
+        }
+
+        textarea {
+            @extend %form__textarea;
+        }
+
+        input,
+        select,
+        textarea {
+            &.error {
+                border: 1px solid $color-error;
+            }
+        }
+
+        label {
+            &.error {
+                text-transform: uppercase;
+                color: $color-error;
+                @include rem(font-size, 8px);
+                position: absolute;
+                top: 1px;
+                left: 3px;
+            }
+        }
+    }
+
+    &__group-left,
+    &__group-right {
+        @extend %form__group-position;
+        position: relative;
+    }
+
+    &__group-left {
+        @extend %form__group-left;
+    }
+
+    &__checkbox-group {
+        @extend %form__checkbox-group;
+    }
+
+    &__radio-group,
+    &__radio-field {
+        @extend %form__radio-position;
+    }
+
+    &__radio-field {
+        @extend %form__radio-field;
+    }
+
+    &__file {
+        cursor: pointer;
+        margin-bottom: 0 !important;
+        position: relative;
+        width: 100%;
+    }
+
+    &__file-input {
+        font-size: 0 !important;
+        height: $input-height;
+        width: 100%;
+    }
+
+    &__file-control {
+        @extend %form__input;
+        border: none;
+        left: 0;
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+
+        &:before {
+            @extend %btn--primary;
+            content: attr(data-btn-name);
+            padding-left: 12px;
+            padding-right: 12px;
+            position: absolute;
+            right: -1px;
+            top: -1px;
+            z-index: 1;
+            transition: background-color .3s ease-out;
+        }
+
+        &:after {
+            content: attr(data-file-name);
+        }
+    }
+
+    &__submit {
+        @extend %form__submit;
+    }
+}

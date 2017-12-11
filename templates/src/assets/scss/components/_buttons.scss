@@ -1,0 +1,66 @@
+
+%btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+    border: 1px solid transparent;
+    color: $color-white;
+    @include rem(padding-left, 32px);
+    @include rem(padding-right, 32px);
+    @include rem(font-size, 12px);
+    @include font-weight(bold);
+    @include rem(height, 32px);
+
+    &--reset {
+        @include reset-button;
+    }
+
+    &--primary,
+    &--secondary,
+    &--white,
+    &--black {
+        @extend %btn;
+    }
+
+    &--primary {
+        background-color: $color-orange;
+
+        &:hover {
+            background-color: darken($color-orange, 10%);
+        }
+    }
+
+    &--secondary {
+        border: 1px solid $color-orange;
+        color: $color-orange;
+
+        &:hover {
+            background-color: darken($color-orange, 10%);
+            color: $color-white;
+        }
+    }
+
+    &--white {
+        color: $color-white;
+        border-color: $color-white;
+
+        &:hover {
+            color: $color-black;
+            background: $color-white;
+        }
+    }
+
+    &--black {
+        color: $color-white;
+        background: $color-black;
+        border-color: $color-black;
+
+        &:hover {
+            border-color: lighten($color-black, 10%);
+            background: lighten($color-black, 25%);
+        }
+    }
+}

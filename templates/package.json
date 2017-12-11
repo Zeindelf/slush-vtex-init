@@ -1,0 +1,33 @@
+{
+  "name": "<%= appName %>",
+  "version": "<%= appVersion %>",
+  "scripts": {
+    "clean": "rm -Rf ./dist",
+    "start": "npm run clean && gulp --colors && gulp watch --colors",
+    "build": "npm run clean && gulp --colors --production",
+    "vtex": "npm run build && gulp watch --colors --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/<%= developerName %>/<%= appName %>"
+  },
+  "author": {
+    "name": "Wellington Barreto",
+    "email": "zeindelf@hotmail.com",
+    "homepage": "https://www.zeindelf.com"
+  },
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/<%= developerName %>/<%= appName %>#readme",
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-google": "^0.9.1",
+    "gulp": "^3.9.1",
+    "taskerify": "^1.5.2"
+  },
+  "dependencies": {
+    "slick-carousel": "^1.6.0"
+  },
+  "engines": {
+      "node": ">= 5.0.0"
+  }
+}

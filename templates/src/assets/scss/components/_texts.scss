@@ -1,0 +1,23 @@
+
+%text {
+    /**
+     * <div class="text--primary"><p>Foo</p></div>
+     * <div class="text--primary"><p><strong>Bar</strong></p></div>
+     */
+    &--primary {
+        p {
+            @include rem(margin-bottom, 7px);
+            @include rem(font-size, 13px);
+            @include font-weight(light);
+            text-transform: uppercase;
+        }
+
+        strong {
+            color: $color-gray;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+
+    &--secondary {}
+}

@@ -1,0 +1,86 @@
+
+%form {
+    $field-space: 5px;
+    $font-size: 12px;
+
+    @mixin input-format {
+        color: $color-gray-dark;
+        border: 1px solid $color-gray;
+        font-size: $font-size;
+        padding-left: 14px;
+        padding-right: 14px;
+        transition: all .3s;
+        width: 100%;
+    }
+
+    &__group {
+        display: flex;
+        margin-bottom: $field-space;
+    }
+
+    &__group-position {
+        width: 100%;
+    }
+
+    &__group-left {
+        margin-right: $field-space;
+    }
+
+    &__submit {
+        @extend %btn--primary;
+    }
+
+    &__input {
+        @include input-format;
+        min-height: $input-height;
+    }
+
+    &__textarea {
+        @include input-format;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        transition: all .3s;
+    }
+
+    &__label {
+        display: block;
+        font-size: $font-size;
+        margin-bottom: 3px;
+    }
+
+    &__checkbox {
+        margin-right: $field-space;
+    }
+
+    &__radio {
+        margin-right: $field-space / 2;
+    }
+
+    &__checkbox-group {
+        display: flex;
+        align-items: center;
+        min-height: $input-height;
+
+        label {
+            margin-bottom: 0;
+        }
+    }
+
+    &__radio-position {
+        display: flex;
+        align-items: center;
+        height: $input-height;
+
+        label {
+            margin-bottom: 0;
+        }
+    }
+
+    &__radio-field {
+        margin-right: $field-space * 2;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

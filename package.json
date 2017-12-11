@@ -1,40 +1,42 @@
 {
-    "name": "slush-vtex-init",
-    "description": "A slush generator to scaffold a Vtex Store Development",
-    "version": "0.0.1",
-    "homepage": "https://github.com/zeindelf/slush-vtex-init",
-    "author": {
-        "name": "Wellington Barreto",
-        "email": "zeindelf@hotmail.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/zeindelf/slush-vtex-init.git"
-    },
-    "bugs": {
-        "url": "https://github.com/zeindelf/slush-vtex-init/issues"
-    },
-    "license": "MIT",
-    "main": "slushfile.js",
-    "engines": {
-        "node": ">= 0.10.26",
-        "npm": ">=1.4.3"
-    },
-    "scripts": {
-        "test": "echo \"No tests\""
-    },
-    "dependencies": {
-        "slush": ">=1.0.0",
-        "gulp": "^3.6.2",
-        "gulp-template": "^0.1.1",
-        "gulp-install": "^0.1.4",
-        "gulp-conflict": "^0.1.1",
-        "gulp-rename": "^1.2.0",
-        "underscore.string": "^2.3.3",
-        "inquirer": "^3.3.0",
-        "iniparser": "^1.0.5"
-    },
-    "keywords": [
-        "slushgenerator"
-    ]
+  "name": "slush-vtex-init",
+  "description": "A slush generator to scaffold a Vtex Store Development",
+  "version": "0.0.1",
+  "homepage": "https://github.com/zeindelf/slush-vtex-init",
+  "author": {
+    "name": "Wellington Barreto",
+    "email": "zeindelf@hotmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zeindelf/slush-vtex-init.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zeindelf/slush-vtex-init/issues"
+  },
+  "license": "MIT",
+  "main": "slushfile.js",
+  "engines": {
+    "node": ">= 0.10.26",
+    "npm": ">=1.4.3"
+  },
+  "scripts": {
+    "test": "echo \"No tests\""
+  },
+  "dependencies": {
+    "gulp": "^3.6.2",
+    "gulp-conflict": "^0.1.1",
+    "gulp-filter": "^5.0.1",
+    "gulp-ignore": "^2.0.2",
+    "gulp-install": "^0.1.4",
+    "gulp-rename": "^1.2.0",
+    "gulp-template": "^0.1.1",
+    "iniparser": "^1.0.5",
+    "inquirer": "^3.3.0",
+    "slush": ">=1.0.0",
+    "underscore.string": "^2.3.3"
+  },
+  "keywords": [
+    "slushgenerator"
+  ]
 }

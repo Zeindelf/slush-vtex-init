@@ -1,0 +1,107 @@
+
+%table {
+    width: 100%;
+    @include rem(font-size, 12px);
+
+    @include mq('md', max) {
+        thead {
+            display: none;
+        }
+
+        tr {
+            display: block;
+        }
+
+        tr,
+        td {
+            float: left;
+            clear: both;
+            width: 100%;
+        }
+
+        th,
+        td {
+            display: block;
+            text-align: right;
+            @include rem(padding, 16px);
+            margin: 0;
+        }
+
+        td {
+            &.small--hide {
+                display: none;
+            }
+        }
+
+        td::before {
+            content: attr(data-label);
+            float: left;
+            text-align: center;
+            @include rem(padding-right, 10px);
+        }
+
+        %table-row,
+        tfoot > .x-table-row:first-child {
+            position: relative;
+            @include rem(margin-top, 10px);
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                @include rem(left, 16px);
+                @include rem(right, 16px);
+                border-bottom: 1px solid #f6f6f6;
+            }
+        }
+    }
+
+    thead th {
+        @include rem(font-size, 16px);
+    }
+
+    tbody tr,
+    tfoot tr {
+        border-top: 1px solid $color-gray-light;
+        border-radius: 5px;
+    }
+
+    tbody td,
+    tfoot td {
+        @include rem(padding-top, 10px);
+        @include rem(padding-bottom, 10px);
+
+        @include mq('md', max) {
+            @include rem(font-size, 16px);
+        }
+
+        @include mq('sm', max) {
+            @include rem(font-size, 12px);
+            padding-left: 0;
+            @include rem(padding-right, 7px);
+        }
+    }
+
+    tfoot td {
+        @include font-weight(bold);
+    }
+
+    td:before {
+        padding: 0;
+    }
+
+    th,
+    td:before {
+        text-transform: uppercase;
+        color: $color-blue-dark;
+        @include font-weight(bold);
+        text-align: left;
+        @include rem(padding-top, 16px);
+        @include rem(padding-bottom, 12px);
+
+        @include mq('md', max) {
+            padding: 0 7px;
+        }
+    }
+}

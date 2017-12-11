@@ -1,0 +1,100 @@
+
+%page-common {
+    &__content {
+        line-height: 1.5;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            @include font-weight(bold);
+            line-height: 1;
+        }
+
+        h1 {
+            @include rem(font-size, 32px);
+            @include rem(margin-bottom, 16px);
+        }
+
+        h2 {
+            @include rem(font-size, 28px);
+            @include rem(margin-bottom, 14px);
+        }
+
+        h3 {
+            @include rem(font-size, 24px);
+            @include rem(margin-bottom, 12px);
+        }
+
+        h4 {
+            @include rem(font-size, 20px);
+            @include rem(margin-bottom, 10px);
+        }
+
+        h5 {
+            @include rem(font-size, 16px);
+            @include rem(margin-bottom, 8px);
+        }
+
+        h6 {
+            @include rem(font-size, 12px);
+            @include rem(margin-bottom, 6px);
+        }
+
+        p {
+            @include rem(margin-bottom, 16px);
+        }
+
+        p a,
+        a {
+            color: $color-orange;
+            text-decoration: underline;
+
+            &:hover {
+                @include link-hover($color-orange);
+            }
+        }
+
+        ol,
+        ul {
+            @include rem(padding-left, 32px);
+            @include rem(margin-bottom, 24px);
+        }
+
+        ul {
+            list-style: circle;
+            list-style: disc;
+        }
+
+        ol {
+            list-style: decimal;
+        }
+
+        blockquote {
+            border-left: 4px solid $color-orange;
+            border-bottom: 1px solid $color-orange;
+            @include rem(margin-bottom, 16px);
+            @include rem(padding, 12px);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            @include rem(padding-top, 30px);
+            height: 0;
+            overflow: hidden;
+
+            iframe,
+            object,
+            embed {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

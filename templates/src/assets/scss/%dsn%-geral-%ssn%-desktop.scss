@@ -1,0 +1,31 @@
+
+@import './__config-base.scss';
+
+/**
+ * Generic
+ */
+@import './generic/_reset.scss';
+@import './generic/_initialize.scss';
+
+/**
+ * Elements
+ */
+@import './elements/_root.scss';
+
+/**
+ * Vendors includes
+ */
+@import './vendor/slick-carousel/_slick-carousel.scss';
+@import './vendor/slick-carousel/_slick-carousel-theme.scss';
+
+/**
+ * Module App
+ */
+@import './layouts/geral/__geral-base.scss';
+
+/**
+ * Utils
+ * Helpers Classes & IE10+ Fallback
+ */
+@import './utils/_helpers.scss';
+@import './utils/_ie-fallback.scss';

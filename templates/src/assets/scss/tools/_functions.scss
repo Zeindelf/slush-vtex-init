@@ -1,0 +1,16 @@
+
+@import './../settings/_z-indexes.scss';
+
+/**
+ * Z-indexes organization
+ * Main file is in: scss/settings/_z-indexes.scss
+ */
+@function z($name) {
+    @if index($z-indexes, $name) {
+        // Starts at 5000, to order some external libs uses high z-index values
+        @return (length($z-indexes) - index($z-indexes, $name)) + 5000;
+    } @else {
+        @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+        @return null;
+    }
+}

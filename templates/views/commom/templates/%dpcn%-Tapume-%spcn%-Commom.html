@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <vtex:template id="<%= developerPascalCaseName %>-Head-<%= storePascalCaseName %>-Commom" />
+
+        <!-- SEO -->
+        <vtex:metaTags />
+        <vtex:template id="<%= developerPascalCaseName %>-JsonLD-<%= storePascalCaseName %>-Commom" />
+
+        <!-- Styles -->
+        <vtex:template id="<%= developerPascalCaseName %>-Styles-<%= storePascalCaseName %>-Commom" />
+
+        <!-- Google Tag Manager -->
+        <vtex:template id="<%= developerPascalCaseName %>-GoogleTagManager-<%= storePascalCaseName %>-Commom" />
+        <!-- End Google Tag Manager -->
+    </head>
+    <body>
+        <!-- Main Content -->
+        <main role="main" class="x-tapume__content">
+            <vtex:contentPlaceHolder id="Banner-Tapume" />
+        </main>
+        <!-- ./Main Content -->
+    </body>
+</html>

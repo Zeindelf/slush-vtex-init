@@ -1,0 +1,19 @@
+
+/**
+ * Settings alerts boxes
+ */
+$success-text       : #3c763d !default;
+$success-background : #dff0d8 !default;
+$success-border     : darken($success-background, 5%) !default;
+
+$info-text          : #31708f !default;
+$info-background    : #d9edf7 !default;
+$info-border        : darken($info-background, 7%) !default;
+
+$warning-text       : #8a6d3b !default;
+$warning-background : #faf2cc !default;
+$warning-border     : darken($warning-background, 15%) !default;
+
+$danger-text        : #a94442 !default;
+$danger-background  : #f2dede !default;
+$danger-border      : darken($danger-background, 5%) !default;
