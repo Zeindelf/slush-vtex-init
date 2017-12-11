@@ -25,6 +25,7 @@
     "taskerify": "^1.5.2"
   },
   "dependencies": {
+    "lazysizes": "^4.0.1",
     "slick-carousel": "^1.6.0"
   },
   "engines": {

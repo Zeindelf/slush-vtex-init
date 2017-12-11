@@ -9,8 +9,8 @@
 
         <!-- Styles -->
         <vtex:template id="<%= developerPascalCaseName %>-Styles-<%= storePascalCaseName %>-Commom" />
-        <vtex:template id="<%= developerPascalCaseName %>-Styles-<%= storePascalCaseName %>-Mobile" />
-        <link rel="stylesheet" href="/arquivos/<%= developerSlugName %>-<%= templateSlugName %>-<%= storeSlugName %>-mobile.css" media="all" />
+        <vtex:template id="<%= developerPascalCaseName %>-Styles-<%= storePascalCaseName %>-Desktop" />
+        <link rel="stylesheet" href="/arquivos/<%= developerName %>-<%= templateName %>-<%= storeName %>-desktop.css" media="all" />
 
         <!-- Theme Scripts -->
         <vtex:template id="<%= developerPascalCaseName %>-ScriptsHeaderTheme-<%= storePascalCaseName %>-Commom" />
@@ -20,13 +20,13 @@
         <!-- End Google Tag Manager -->
     </head>
     <body>
-        <vtex:template id="<%= developerPascalCaseName %>-Header-<%= storePascalCaseName %>-Mobile" />
+        <vtex:template id="<%= developerPascalCaseName %>-Header-<%= storePascalCaseName %>-Desktop" />
 
         <!-- Main Content -->
-        <main role="main" class="x-<%= templateSlugName %>__main"></main>
+        <main role="main" class="x-<%= templateName %>__main"></main>
         <!-- ./Main Content -->
 
-        <vtex:template id="<%= developerPascalCaseName %>-Footer-<%= storePascalCaseName %>-Mobile" />
+        <vtex:template id="<%= developerPascalCaseName %>-Footer-<%= storePascalCaseName %>-Desktop" />
         <vtex:template id="<%= developerPascalCaseName %>-AjaxLoader-<%= storePascalCaseName %>-Commom" />
         <vtex:template id="<%= developerPascalCaseName %>-Overlay-<%= storePascalCaseName %>-Commom" />
 
@@ -37,7 +37,7 @@
         <vtex:template id="<%= developerPascalCaseName %>-GoogleFonts-<%= storePascalCaseName %>-Commom" />
         <vtex:template id="<%= developerPascalCaseName %>-Scripts-<%= storePascalCaseName %>-Commom" />
         <vtex:template id="<%= developerPascalCaseName %>-ScriptsInit-<%= storePascalCaseName %>-Commom" />
-        <vtex:template id="<%= developerPascalCaseName %>-Scripts-<%= storePascalCaseName %>-Mobile" />
-        <script type="text/javascript" src="/arquivos/<%= developerSlugName %>-<%= templateSlugName %>-<%= storeSlugName %>-mobile.js"></script>
+        <vtex:template id="<%= developerPascalCaseName %>-Scripts-<%= storePascalCaseName %>-Desktop" />
+        <script type="text/javascript" src="/arquivos/<%= developerName %>-<%= templateName %>-<%= storeName %>-desktop.js"></script>
     </body>
 </html>

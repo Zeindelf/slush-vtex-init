@@ -11,5 +11,11 @@
     // Optimized by DOMContentLoaded instead DOMLoad
     document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('body').classList.remove('has--loader');
+
+        lazySizesConfig.lazyClass = 'js--lazy';
+        lazySizesConfig.preloadClass = 'has--lazy-preload';
+        lazySizesConfig.loadingClass = 'has--lazy-loading';
+        lazySizesConfig.loadedClass = 'is--lazy-loaded';
+        lazySizesConfig.loadMode = 1;
     });
 </script>

@@ -10,7 +10,7 @@
         <!-- Styles -->
         <vtex:template id="<%= developerPascalCaseName %>-Styles-<%= storePascalCaseName %>-Commom" />
         <vtex:template id="<%= developerPascalCaseName %>-Styles-<%= storePascalCaseName %>-Mobile" />
-        <link rel="stylesheet" href="/arquivos/<%= developerName %>-home-<%= storeName %>-mobile.css" media="all" />
+        <link rel="stylesheet" href="/arquivos/<%= developerName %>-<%= templateName %>-<%= storeName %>-mobile.css" media="all" />
 
         <!-- Theme Scripts -->
         <vtex:template id="<%= developerPascalCaseName %>-ScriptsHeaderTheme-<%= storePascalCaseName %>-Commom" />
@@ -23,7 +23,7 @@
         <vtex:template id="<%= developerPascalCaseName %>-Header-<%= storePascalCaseName %>-Mobile" />
 
         <!-- Main Content -->
-        <main role="main" class="x-home__main"></main>
+        <main role="main" class="x-<%= templateName %>__main"></main>
         <!-- ./Main Content -->
 
         <vtex:template id="<%= developerPascalCaseName %>-Footer-<%= storePascalCaseName %>-Mobile" />
@@ -38,6 +38,6 @@
         <vtex:template id="<%= developerPascalCaseName %>-Scripts-<%= storePascalCaseName %>-Commom" />
         <vtex:template id="<%= developerPascalCaseName %>-ScriptsInit-<%= storePascalCaseName %>-Commom" />
         <vtex:template id="<%= developerPascalCaseName %>-Scripts-<%= storePascalCaseName %>-Mobile" />
-        <script type="text/javascript" src="/arquivos/<%= developerName %>-home-<%= storeName %>-mobile.js"></script>
+        <script type="text/javascript" src="/arquivos/<%= developerName %>-<%= templateName %>-<%= storeName %>-mobile.js"></script>
     </body>
 </html>

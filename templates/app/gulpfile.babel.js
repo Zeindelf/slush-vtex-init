@@ -15,7 +15,7 @@ const SRC          = Taskerify.config.srcPath;
 const DIST         = Taskerify.config.distPath;
 
 const author       = '<%= developerName %>';
-const storeName    = '<%= storeSlugName %>';
+const storeName    = '<%= storeName %>';
 const desktopFiles = ['geral', 'home'];
 const mobileFiles  = ['geral', 'home'];
 
@@ -44,6 +44,8 @@ Taskerify( (mix) => {
 
     // Mix Vendor Scripts
     mix.scripts([
+        `${NODE_MODULES}/lazysizes/lazysizes.js`,
+        `${NODE_MODULES}/lazysizes/plugins/noscript/ls.noscript.js`,
         `${NODE_MODULES}/slick-carousel/slick/slick.js`,
     ], `${DIST}/commom/js/${author}-vendor-${storeName}.js`);
 });
