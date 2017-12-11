@@ -2,25 +2,25 @@
 ;(function() {
     'use strict';
 
-    const _                = require('underscore.string');
-    const gulp             = require('gulp');
-    const install          = require('gulp-install');
-    const conflict         = require('gulp-conflict');
-    const template         = require('gulp-template');
-    const rename           = require('gulp-rename');
-    const inquirer         = require('inquirer');
-    const defaultQuestions = require('./../default-questions/default-questions__index.js');
+    const _        = require('underscore.string');
+    const gulp     = require('gulp');
+    const install  = require('gulp-install');
+    const conflict = require('gulp-conflict');
+    const template = require('gulp-template');
+    const rename   = require('gulp-rename');
+    const inquirer = require('inquirer');
+    const prompts  = require('./../prompts/prompts__index.js');
 
     module.exports = function(done) {
-        const prompts = [
+        const questions = [
             {
                 name: 'appName',
-                message: 'Nome da aplicação (ex.: vtex-init)',
+                message: 'Nome da aplicação: (ex.: vtex-init)',
                 default: 'vtex-init',
             },
             {
                 name: 'appVersion',
-                message: 'Número da versão da aplicação',
+                message: 'Número da versão da aplicação:',
                 default: '0.0.1',
             },
         ];
@@ -32,10 +32,10 @@
             },
         ];
 
-        Array.prototype.push.apply(prompts, defaultQuestions.questions);
-        Array.prototype.push.apply(prompts, confirm);
+        Array.prototype.push.apply(questions, prompts.questions);
+        Array.prototype.push.apply(questions, confirm);
 
-        inquirer.prompt(prompts)
+        inquirer.prompt(questions)
             .then((answers) => {
                 if ( ! answers.moveon ) {
                     return done();

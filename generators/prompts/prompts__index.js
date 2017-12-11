@@ -6,12 +6,12 @@
         questions: [
             {
                 name: 'developerName',
-                message: 'Nome do desenvolvedor/agência (ex.: zeindelf)',
+                message: 'Nome do desenvolvedor/agência: (ex.: zeindelf)',
                 default: 'zeindelf',
             },
             {
                 name: 'storeName',
-                message: 'Nome da loja em formato slug (ex.: store-name)',
+                message: 'Nome da loja: (ex.: store-name)',
                 default: 'store-name',
             },
         ],

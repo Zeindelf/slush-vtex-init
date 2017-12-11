@@ -11,8 +11,8 @@ const DIST         = Taskerify.config.distPath;
 
 const author       = '<%= developerName %>';
 const storeName    = '<%= storeName %>';
-const desktopFiles = ['geral', 'home'];
-const mobileFiles  = ['geral', 'home'];
+const desktopFiles = ['geral', 'home']; // Desktop Files
+const mobileFiles  = ['geral', 'home']; // Mobile Files
 
 Taskerify( (mix) => {
     // Image Minifier
