@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce">
+    <head>
+        <vtex:template id="<%= developerPascalCaseName %>-Head-<%= storePascalCaseName %>-Commom" />
+
+        <!-- SEO -->
+        <vtex:metaTags />
+        <vtex:template id="<%= developerPascalCaseName %>-JsonLD-<%= storePascalCaseName %>-Commom" />
+
+        <!-- Styles -->
+        <vtex:template id="<%= developerPascalCaseName %>-Styles-<%= storePascalCaseName %>-Commom" />
+        <vtex:template id="<%= developerPascalCaseName %>-Styles-<%= storePascalCaseName %>-Desktop" />
+        <link rel="stylesheet" href="/arquivos/<%= developerSlugName %>-<%= templateSlugName %>-<%= storeSlugName %>-desktop.css" media="all" />
+
+        <!-- Theme Scripts -->
+        <vtex:template id="<%= developerPascalCaseName %>-ScriptsHeaderTheme-<%= storePascalCaseName %>-Commom" />
+
+        <!-- Google Tag Manager -->
+        <vtex:template id="<%= developerPascalCaseName %>-GoogleTagManager-<%= storePascalCaseName %>-Commom" />
+        <!-- End Google Tag Manager -->
+    </head>
+    <body>
+        <vtex:template id="<%= developerPascalCaseName %>-Header-<%= storePascalCaseName %>-Desktop" />
+
+        <!-- Main Content -->
+        <main role="main" class="x-<%= templateSlugName %>__main"></main>
+        <!-- ./Main Content -->
+
+        <vtex:template id="<%= developerPascalCaseName %>-Footer-<%= storePascalCaseName %>-Desktop" />
+        <vtex:template id="<%= developerPascalCaseName %>-AjaxLoader-<%= storePascalCaseName %>-Commom" />
+        <vtex:template id="<%= developerPascalCaseName %>-Overlay-<%= storePascalCaseName %>-Commom" />
+
+        <!-- Vtex Helpers -->
+        <vtex:template id="<%= developerPascalCaseName %>-VtexHelpers-<%= storePascalCaseName %>-Commom" />
+
+        <!-- Scripts -->
+        <vtex:template id="<%= developerPascalCaseName %>-GoogleFonts-<%= storePascalCaseName %>-Commom" />
+        <vtex:template id="<%= developerPascalCaseName %>-Scripts-<%= storePascalCaseName %>-Commom" />
+        <vtex:template id="<%= developerPascalCaseName %>-ScriptsInit-<%= storePascalCaseName %>-Commom" />
+        <vtex:template id="<%= developerPascalCaseName %>-Scripts-<%= storePascalCaseName %>-Desktop" />
+        <script type="text/javascript" src="/arquivos/<%= developerSlugName %>-<%= templateSlugName %>-<%= storeSlugName %>-desktop.js"></script>
+    </body>
+</html>

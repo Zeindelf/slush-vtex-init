@@ -50,8 +50,7 @@ gulp.task('default', (done) => {
         },
     ];
 
-    inquirer
-        .prompt(prompts)
+    inquirer.prompt(prompts)
         .then((answers) => {
             if ( ! answers.moveon ) {
                 return done();
@@ -61,7 +60,7 @@ gulp.task('default', (done) => {
             answers.developerPascalCaseName = _.capitalize(answers.developerName);
             answers.developerSlugName = answers.developerName.toLowerCase();
 
-            gulp.src(`${__dirname}/templates/**`)
+            gulp.src(`${__dirname}/templates/app/**`)
                 .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
                 .pipe(rename((file) => {
                     if ( file.basename[0] === '@' ) {
@@ -95,12 +94,92 @@ gulp.task('default', (done) => {
         });
 });
 
-gulp.task('template', (done) => {
-    const templateName = gulp.args ? gulp.args[0] : 'Default';
+gulp.task('desktop-template', (done) => {
+    const prompts = [
+        {
+            name: 'developerName',
+            message: 'Nome do desenvolvedor/agência (ex.: zeindelf)',
+            default: 'zeindelf',
+        },
+        {
+            name: 'storeSlugName',
+            message: 'Nome da loja em formato slug (ex.: store-name)',
+            default: 'store-name',
+        },
+        {
+            name: 'storePascalCaseName',
+            message: 'Nome da loja para Templates da Vtex em PascalCase (ex.: StoreName)',
+            default: 'StoreName',
+        },
+        {
+            type: 'confirm',
+            name: 'moveon',
+            message: 'Criar Template?'
+        },
+    ];
 
-    gulp.src(__dirname + '/templates/views/desktop/html-templates/%dpcn%-Home-%spcn%-Desktop.html')
-        .pipe(template({name: templateName}))
-        .pipe(rename(`%dpcn%-${templateName}-%spcn%-Desktop.html`))
-        .pipe(gulp.dest('./'))
-        .on('finish', () => done());
+    inquirer.prompt(prompts)
+        .then((answers) => {
+            if ( ! answers.moveon ) {
+                return done();
+            }
+
+            // Set variables
+            answers.developerPascalCaseName = _.capitalize(answers.developerName);
+            answers.developerSlugName = answers.developerName.toLowerCase();
+            answers.templateName = gulp.args ? gulp.args[0] : 'Default';
+            answers.templatePascalCaseName = _.capitalize(_.camelize(answers.templateName));
+            answers.templateSlugName = answers.templateName.toLowerCase();
+
+            gulp.src(`${__dirname}/templates/defaults/desktop-template.html`)
+                .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
+                .pipe(rename(`${answers.developerPascalCaseName}-${answers.templatePascalCaseName}-${answers.storePascalCaseName}-Desktop.html`))
+                .pipe(gulp.dest('./views/desktop/html-templates/'))
+                .on('finish', () => done());
+        });
+});
+
+gulp.task('mobile-template', (done) => {
+    const prompts = [
+        {
+            name: 'developerName',
+            message: 'Nome do desenvolvedor/agência (ex.: zeindelf)',
+            default: 'zeindelf',
+        },
+        {
+            name: 'storeSlugName',
+            message: 'Nome da loja em formato slug (ex.: store-name)',
+            default: 'store-name',
+        },
+        {
+            name: 'storePascalCaseName',
+            message: 'Nome da loja para Templates da Vtex em PascalCase (ex.: StoreName)',
+            default: 'StoreName',
+        },
+        {
+            type: 'confirm',
+            name: 'moveon',
+            message: 'Criar Template?'
+        },
+    ];
+
+    inquirer.prompt(prompts)
+        .then((answers) => {
+            if ( ! answers.moveon ) {
+                return done();
+            }
+
+            // Set variables
+            answers.developerPascalCaseName = _.capitalize(answers.developerName);
+            answers.developerSlugName = answers.developerName.toLowerCase();
+            answers.templateName = gulp.args ? gulp.args[0] : 'Default';
+            answers.templatePascalCaseName = _.capitalize(_.camelize(answers.templateName));
+            answers.templateSlugName = answers.templateName.toLowerCase();
+
+            gulp.src(`${__dirname}/templates/defaults/mobile-template.html`)
+                .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
+                .pipe(rename(`${answers.developerPascalCaseName}-${answers.templatePascalCaseName}-${answers.storePascalCaseName}-Mobile.html`))
+                .pipe(gulp.dest('./views/mobile/html-templates/'))
+                .on('finish', () => done());
+        });
 });
