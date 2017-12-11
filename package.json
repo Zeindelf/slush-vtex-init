@@ -1,7 +1,7 @@
 {
   "name": "slush-vtex-init",
   "description": "A slush generator to scaffold a Vtex Store Development",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/zeindelf/slush-vtex-init",
   "author": {
     "name": "Wellington Barreto",
