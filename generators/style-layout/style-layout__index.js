@@ -8,6 +8,7 @@
     const rename   = require('gulp-rename');
     const inquirer = require('inquirer');
     const prompts  = require('./../prompts/prompts__index.js');
+    const helpers  = require('./../utils/helpers.js');
 
     module.exports = function(done) {
         const questions = [];
@@ -35,36 +36,14 @@
 
                 gulp.src(`${__dirname}/templates/style-layout__dir/**`)
                     .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
-                    .pipe(rename((file) => renameFiles(file, answers)))
+                    .pipe(rename((file) => helpers.renameFiles(file, answers)))
                     .pipe(gulp.dest(`${scssPath}/layouts/${answers.layoutName}/`))
 
                 gulp.src(`${__dirname}/templates/style-layout__file/**`)
                     .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
-                    .pipe(rename((file) => renameFiles(file, answers)))
+                    .pipe(rename((file) => helpers.renameFiles(file, answers)))
                     .pipe(gulp.dest(`${scssPath}/`))
                     .on('finish', () => done());
             });
     };
 })();
-
-function renameFiles(file, answers) {
-    // lsn: layout slug name
-    if ( file.basename.indexOf('%lsn%') > -1 ) {
-        file.basename = file.basename.replace('%lsn%', answers.layoutName);
-    }
-
-    // dsn: developer slug name
-    if ( file.basename.indexOf('%dsn%') > -1 ) {
-        file.basename = file.basename.replace('%dsn%', answers.developerName);
-    }
-
-    // ssn: store slug name
-    if ( file.basename.indexOf('%ssn%') > -1 ) {
-        file.basename = file.basename.replace('%ssn%', answers.storeName);
-    }
-
-    // %device%: device
-    if ( file.basename.indexOf('%device%') > -1 ) {
-        file.basename = file.basename.replace('%device%', answers.line.toLowerCase());
-    }
-}

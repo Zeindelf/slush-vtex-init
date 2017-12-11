@@ -11,12 +11,19 @@ const DIST         = Taskerify.config.distPath;
 
 const author       = '<%= developerName %>';
 const storeName    = '<%= storeName %>';
-const desktopFiles = ['geral', 'home']; // Desktop Files
-const mobileFiles  = ['geral', 'home']; // Mobile Files
+const commomFiles  = ['commom', 'wishlist'];
+const desktopFiles = ['geral', 'home'];
+const mobileFiles  = ['geral', 'home'];
 
 Taskerify( (mix) => {
     // Image Minifier
     mix.imagemin(`${SRC}/img`, `${DIST}/img-min`);
+
+    // Commom Files
+    commomFiles.map( (file) => {
+        mix.browserify(`${SRC}/commom/js/${author}-${file}-${storeName}.js`, `${DIST}/commom/js`)
+            .sass(`${SRC}/commom/scss/${author}-${file}-${storeName}.scss`,  `${DIST}/commom/css`);
+    });
 
     // Main Desktop Files
     desktopFiles.map( (file) => {
@@ -29,10 +36,6 @@ Taskerify( (mix) => {
         mix.browserify(`${SRC}/mobile/js/${author}-${file}-${storeName}-mobile.js`, `${DIST}/mobile/js`)
             .sass(`${SRC}/mobile/scss/${author}-${file}-${storeName}-mobile.scss`,  `${DIST}/mobile/css`);
     });
-
-    // Commom Files
-    mix.browserify(`${SRC}/commom/js/${author}-commom-${storeName}.js`, `${DIST}/commom/js`)
-        .sass(`${SRC}/commom/scss/${author}-commom-${storeName}.scss`,  `${DIST}/commom/css`);
 
     // Javascript Linter
     mix.eslint();

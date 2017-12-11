@@ -28,7 +28,6 @@
     "gulp-conflict": "^0.1.1",
     "gulp-filter": "^5.0.1",
     "gulp-ignore": "^2.0.2",
-    "gulp-inject-string": "^1.1.0",
     "gulp-install": "^0.1.4",
     "gulp-rename": "^1.2.0",
     "gulp-template": "^0.1.1",

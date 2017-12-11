@@ -10,6 +10,7 @@
     const rename   = require('gulp-rename');
     const inquirer = require('inquirer');
     const prompts  = require('./../prompts/prompts__index.js');
+    const helpers    = require('./../utils/helpers.js');
 
     module.exports = function(done) {
         const questions = [
@@ -52,25 +53,7 @@
                             file.basename = '.' + file.basename.slice(1);
                         }
 
-                        // dsn: developer slug name
-                        if ( file.basename.indexOf('%dsn%') > -1 ) {
-                            file.basename = file.basename.replace('%dsn%', answers.developerName);
-                        }
-
-                        // ssn: store slug name
-                        if ( file.basename.indexOf('%ssn%') > -1 ) {
-                            file.basename = file.basename.replace('%ssn%', answers.storeName);
-                        }
-
-                        // dpcn: developer pascal case name
-                        if ( file.basename.indexOf('%dpcn%') > -1 ) {
-                            file.basename = file.basename.replace('%dpcn%', answers.developerPascalCaseName);
-                        }
-
-                        // spcn: store pascal case name
-                        if ( file.basename.indexOf('%spcn%') > -1 ) {
-                            file.basename = file.basename.replace('%spcn%', answers.storePascalCaseName);
-                        }
+                        helpers.renameFiles(file, answers);
                     }))
                     .pipe(conflict('./'))
                     .pipe(gulp.dest('./'))
