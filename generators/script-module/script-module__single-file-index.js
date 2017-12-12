@@ -12,15 +12,22 @@
 
     module.exports = function(done) {
         const questions = [];
+        const fileName = [
+            {
+                name: 'moduleFileName',
+                message: 'Nome do arquivo (ex.: main)',
+            },
+        ];
         const confirm = [
             {
                 type: 'confirm',
                 name: 'moveon',
-                message: 'Criar Style Layout?',
+                message: 'Criar Script Module?',
             },
         ];
 
         Array.prototype.push.apply(questions, prompts.questions);
+        Array.prototype.push.apply(questions, fileName);
         Array.prototype.push.apply(questions, prompts.deviceList);
         Array.prototype.push.apply(questions, confirm);
 
@@ -31,18 +38,14 @@
                 }
 
                 // Set variables
-                const scssPath = `./src/assets/${answers.line.toLowerCase()}/scss`;
-                answers.layoutName = gulp.args ? gulp.args[0] : 'default';
+                const modulePath = `./src/assets/${answers.line.toLowerCase()}/js`;
+                answers.moduleName           = gulp.args ? gulp.args[0] : 'default';
+                answers.modulePascalCaseName = _.classify(answers.moduleName);
 
-                gulp.src(`${__dirname}/templates/style-layout__dir/**`)
+                gulp.src(`${__dirname}/templates/script-module__single-file/**`)
                     .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
                     .pipe(rename((file) => helpers.renameFiles(file, answers)))
-                    .pipe(gulp.dest(`${scssPath}/layouts/${answers.layoutName}/`));
-
-                gulp.src(`${__dirname}/templates/style-layout__file/**`)
-                    .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
-                    .pipe(rename((file) => helpers.renameFiles(file, answers)))
-                    .pipe(gulp.dest(`${scssPath}/`))
+                    .pipe(gulp.dest(`${modulePath}/modules/${answers.modulePascalCaseName}/`))
                     .on('finish', () => done());
             });
     };

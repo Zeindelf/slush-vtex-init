@@ -12,6 +12,12 @@
 
     module.exports = function(done) {
         const questions = [];
+        const fileName = [
+            {
+                name: 'layoutFileName',
+                message: 'Nome do arquivo (ex.: main)',
+            },
+        ];
         const confirm = [
             {
                 type: 'confirm',
@@ -21,6 +27,7 @@
         ];
 
         Array.prototype.push.apply(questions, prompts.questions);
+        Array.prototype.push.apply(questions, fileName);
         Array.prototype.push.apply(questions, prompts.deviceList);
         Array.prototype.push.apply(questions, confirm);
 
@@ -34,15 +41,10 @@
                 const scssPath = `./src/assets/${answers.line.toLowerCase()}/scss`;
                 answers.layoutName = gulp.args ? gulp.args[0] : 'default';
 
-                gulp.src(`${__dirname}/templates/style-layout__dir/**`)
+                gulp.src(`${__dirname}/templates/style-layout__single-file/**`)
                     .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
                     .pipe(rename((file) => helpers.renameFiles(file, answers)))
-                    .pipe(gulp.dest(`${scssPath}/layouts/${answers.layoutName}/`));
-
-                gulp.src(`${__dirname}/templates/style-layout__file/**`)
-                    .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
-                    .pipe(rename((file) => helpers.renameFiles(file, answers)))
-                    .pipe(gulp.dest(`${scssPath}/`))
+                    .pipe(gulp.dest(`${scssPath}/layouts/${answers.layoutName}/`))
                     .on('finish', () => done());
             });
     };

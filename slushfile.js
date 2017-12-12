@@ -17,3 +17,7 @@ gulp.task('default', require('./generators/application/application__index.js'));
 gulp.task('html-template', require('./generators/html-templates/html-templates__index.js'));
 gulp.task('script-module', require('./generators/script-module/script-module__index.js'));
 gulp.task('style-layout', require('./generators/style-layout/style-layout__index.js'));
+
+// Generators Single Files Task
+gulp.task('single-script-module', require('./generators/script-module/script-module__single-file-index.js'));
+gulp.task('single-style-layout', require('./generators/style-layout/style-layout__single-file-index.js'));

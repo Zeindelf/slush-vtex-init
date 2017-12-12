@@ -28,6 +28,11 @@
                 file.basename = file.basename.replace('%msn%', answers.moduleName);
             }
 
+            // mfn: module file name
+            if ( file.basename.indexOf('%mfn%') > -1 ) {
+                file.basename = file.basename.replace('%mfn%', answers.moduleFileName);
+            }
+
             // mpcn: module pascal case name
             if ( file.basename.indexOf('%mpcn%') > -1 ) {
                 file.basename = file.basename.replace('%mpcn%', answers.modulePascalCaseName);
@@ -36,6 +41,11 @@
             // lsn: layout slug name
             if ( file.basename.indexOf('%lsn%') > -1 ) {
                 file.basename = file.basename.replace('%lsn%', answers.layoutName);
+            }
+
+            // lfn: layout file name
+            if ( file.basename.indexOf('%lfn%') > -1 ) {
+                file.basename = file.basename.replace('%lfn%', answers.layoutFileName);
             }
 
             // %device%: device
