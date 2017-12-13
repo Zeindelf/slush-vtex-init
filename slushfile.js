@@ -21,3 +21,6 @@ gulp.task('style-layout', require('./generators/style-layout/style-layout__index
 // Generators Single Files Task
 gulp.task('single-script-module', require('./generators/script-module/script-module__single-file-index.js'));
 gulp.task('single-style-layout', require('./generators/style-layout/style-layout__single-file-index.js'));
+
+// Generator Sublayouts
+gulp.task('sublayout-style-layout', require('./generators/style-layout/style-layout__sublayout.js'));
