@@ -16,7 +16,7 @@
         const sublayout = [
             {
                 name: 'sublayout',
-                message: 'Nome do sublayout (/layouts/geral/sublayout)',
+                message: 'Nome do layout principal: (ex.: geral)',
             },
         ];
         const confirm = [
@@ -27,7 +27,6 @@
             },
         ];
 
-        Array.prototype.push.apply(questions, prompts.questions);
         Array.prototype.push.apply(questions, sublayout);
         Array.prototype.push.apply(questions, prompts.deviceList);
         Array.prototype.push.apply(questions, confirm);
@@ -39,7 +38,7 @@
                 }
 
                 // Set variables
-                const scssPath = `./src/assets/${answers.line.toLowerCase()}/scss`;
+                const scssPath     = `./src/assets/${answers.line.toLowerCase()}/scss`;
                 answers.layoutName = gulp.args ? gulp.args[0] : 'default';
 
                 gulp.src(`${__dirname}/templates/style-layout__dir/**`)

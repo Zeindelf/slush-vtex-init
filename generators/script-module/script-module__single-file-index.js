@@ -16,7 +16,7 @@
         const fileName = [
             {
                 name: 'moduleFileName',
-                message: 'Nome do arquivo (ex.: main)',
+                message: 'Nome do arquivo: (ex.: main)',
             },
         ];
         const confirm = [
@@ -39,7 +39,7 @@
                 }
 
                 // Set variables
-                const modulePath = `./src/assets/${answers.line.toLowerCase()}/js`;
+                const modulePath             = `./src/assets/${answers.line.toLowerCase()}/js`;
                 answers.moduleName           = gulp.args ? gulp.args[0] : 'default';
                 answers.modulePascalCaseName = _.classify(answers.moduleName);
 

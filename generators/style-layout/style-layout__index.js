@@ -32,7 +32,7 @@
                 }
 
                 // Set variables
-                const scssPath = `./src/assets/${answers.line.toLowerCase()}/scss`;
+                const scssPath     = `./src/assets/${answers.line.toLowerCase()}/scss`;
                 answers.layoutName = gulp.args ? gulp.args[0] : 'default';
 
                 gulp.src(`${__dirname}/templates/style-layout__dir/**`)

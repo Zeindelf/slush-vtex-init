@@ -32,7 +32,7 @@
                 }
 
                 // Set variables
-                const modulePath = `./src/assets/${answers.line.toLowerCase()}/js`;
+                const modulePath             = `./src/assets/${answers.line.toLowerCase()}/js`;
                 answers.moduleName           = gulp.args ? gulp.args[0] : 'default';
                 answers.modulePascalCaseName = _.classify(answers.moduleName);
 
@@ -45,7 +45,7 @@
                 gulp.src(`${__dirname}/templates/script-module__file/**`)
                     .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
                     .pipe(rename((file) => helpers.renameFiles(file, answers)))
-                    .pipe(conflict(`${modulePath}/))
+                    .pipe(conflict(`${modulePath}/`))
                     .pipe(gulp.dest(`${modulePath}/`))
                     .on('finish', () => done());
             });

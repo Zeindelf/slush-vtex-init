@@ -6,6 +6,7 @@
     const gulp     = require('gulp');
     const template = require('gulp-template');
     const rename   = require('gulp-rename');
+    const conflict = require('gulp-conflict');
     const inquirer = require('inquirer');
     const prompts  = require('./../prompts/prompts__index.js');
 
