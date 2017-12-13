@@ -6,6 +6,7 @@
     const gulp     = require('gulp');
     const template = require('gulp-template');
     const rename   = require('gulp-rename');
+    const conflict = require('gulp-conflict');
     const inquirer = require('inquirer');
     const prompts  = require('./../prompts/prompts__index.js');
     const helpers  = require('./../utils/helpers.js');
@@ -26,7 +27,6 @@
             },
         ];
 
-        Array.prototype.push.apply(questions, prompts.questions);
         Array.prototype.push.apply(questions, fileName);
         Array.prototype.push.apply(questions, prompts.deviceList);
         Array.prototype.push.apply(questions, confirm);
@@ -44,6 +44,7 @@
                 gulp.src(`${__dirname}/templates/style-layout__single-file/**`)
                     .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
                     .pipe(rename((file) => helpers.renameFiles(file, answers)))
+                    .pipe(conflict(`${scssPath}/layouts/${answers.layoutName}/`))
                     .pipe(gulp.dest(`${scssPath}/layouts/${answers.layoutName}/`))
                     .on('finish', () => done());
             });

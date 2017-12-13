@@ -38,6 +38,7 @@
                 gulp.src(`${__dirname}/templates/${answers.line.toLowerCase()}-template.html`)
                     .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
                     .pipe(rename(`${answers.developerPascalCaseName}-${answers.templatePascalCaseName}-${answers.storePascalCaseName}-${_.capitalize(answers.line)}.html`))
+                    .pipe(conflict(`./views/${answers.line.toLowerCase()}/html-templates/`))
                     .pipe(gulp.dest(`./views/${answers.line.toLowerCase()}/html-templates/`))
                     .on('finish', () => done());
             });

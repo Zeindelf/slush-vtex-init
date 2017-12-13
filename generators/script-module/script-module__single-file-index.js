@@ -6,6 +6,7 @@
     const gulp     = require('gulp');
     const template = require('gulp-template');
     const rename   = require('gulp-rename');
+    const conflict = require('gulp-conflict');
     const inquirer = require('inquirer');
     const prompts  = require('./../prompts/prompts__index.js');
     const helpers  = require('./../utils/helpers.js');
@@ -45,6 +46,7 @@
                 gulp.src(`${__dirname}/templates/script-module__single-file/**`)
                     .pipe(template(answers, {interpolate: /<%=([\s\S]+?)%>/g}))
                     .pipe(rename((file) => helpers.renameFiles(file, answers)))
+                    .pipe(conflict(`${modulePath}/modules/${answers.modulePascalCaseName}/`))
                     .pipe(gulp.dest(`${modulePath}/modules/${answers.modulePascalCaseName}/`))
                     .on('finish', () => done());
             });
